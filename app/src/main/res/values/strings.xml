@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PierwszaAplikacjaAndroid</string>
+    <string name="turn_x">Kolej gracza: X</string>
+    <string name="turn_o">Kolej gracza: O</string>
+    <string name="winner_x">Wygrał gracz: X!</string>
+    <string name="winner_o">Wygrał gracz: O!</string>
+    <string name="draw">Remis!</string>
+    <string name="restart">Zagraj ponownie</string>
+</resources>
