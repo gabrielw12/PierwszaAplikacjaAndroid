@@ -16,12 +16,12 @@ import pl.agh.ite.pierwszaaplikacjaandroid.ui.theme.PierwszaAplikacjaAndroidThem
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // setContent określa, co wyświetli się na ekranie [cite: 261]
+        // setContent określa, co wyświetli się na ekranie
         setContent {
             PierwszaAplikacjaAndroidTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background // [cite: 324, 325]
+                    color = MaterialTheme.colorScheme.background
                 ) {
                     KolkoIKrzyzykGra()
                 }
@@ -30,10 +30,10 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// Funkcje @Composable definiują nasze elementy UI [cite: 273]
+// Funkcje @Composable
 @Composable
 fun KolkoIKrzyzykGra() {
-    // Stan aplikacji (State Management) [cite: 358]
+    // Stan aplikacji
     // remember pozwala Compose zapamiętać wartości przy odświeżaniu ekranu
     var plansza by remember { mutableStateOf(List(9) { "" }) }
     var kolejKrzyzyka by remember { mutableStateOf(true) }
@@ -57,7 +57,7 @@ fun KolkoIKrzyzykGra() {
         return null
     }
 
-    // Obsługa kliknięcia w pole [cite: 303]
+    // Obsługa kliknięcia w pole
     fun kliknijPole(indeks: Int) {
         if (plansza[indeks].isEmpty() && zwyciezca == null) {
             val nowaPlansza = plansza.toMutableList()
@@ -70,7 +70,7 @@ fun KolkoIKrzyzykGra() {
 
     // Główny układ ekranu - układamy elementy pionowo
     Column(
-        modifier = Modifier.fillMaxSize(), // na cały ekran [cite: 278]
+        modifier = Modifier.fillMaxSize(), // na cały ekran
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -81,9 +81,9 @@ fun KolkoIKrzyzykGra() {
                 zwyciezca != null -> "Wygrał: $zwyciezca!"
                 else -> "Kolej gracza: ${if (kolejKrzyzyka) "X" else "O"}"
             },
-            fontSize = 32.sp, // [cite: 319]
-            fontWeight = FontWeight.Bold, // [cite: 320]
-            modifier = Modifier.padding(bottom = 32.dp) // [cite: 299, 342]
+            fontSize = 32.sp, //
+            fontWeight = FontWeight.Bold, //
+            modifier = Modifier.padding(bottom = 32.dp) //
         )
 
         // Rysowanie planszy 3x3
